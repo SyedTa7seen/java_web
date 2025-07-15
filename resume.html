@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Tahseen Ahmed - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .name {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        .nav-back {
+            margin-bottom: 30px;
+        }
+
+        .nav-back a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-back a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Content */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 30px;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        .section h4 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .skill-rating {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+        }
+
+        .language-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .language-rating {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .job-description {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+        }
+
+        .degree {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .education-duration {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* Profile */
+        .profile-text {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* PDF Download */
+        .pdf-download {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+        }
+
+        .pdf-download a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: white;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-download a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .name {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <div class="nav-back">
+            <a href="index.html">← Back to Homepage</a>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Syed Tahseen Ahmed</h1>
+            <p class="title">Computer Science Student | Problem Solver | Team Leader</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone:</strong><br>
+                    013 090 29110<br>
+                    013 188 81363
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    sysyedtahseen@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong><br>
+                    Middle Badda, Dhaka
+                </div>
+                <div class="contact-item">
+                    <strong>University:</strong><br>
+                    BRAC University
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Skills Section -->
+                <div class="section">
+                    <h2>Skills</h2>
+                    <div class="skill-item">
+                        <span class="skill-name">DSA (in Python)</span>
+                        <span class="skill-rating">10/10</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Communication</span>
+                        <span class="skill-rating">10/10</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Problem Solving</span>
+                        <span class="skill-rating">9/10</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Team Collaboration</span>
+                        <span class="skill-rating">8/10</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Time Management</span>
+                        <span class="skill-rating">8/10</span>
+                    </div>
+                </div>
+
+                <!-- Languages Section -->
+                <div class="section">
+                    <h2>Languages</h2>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-rating">10/10</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Bengali</span>
+                        <span class="language-rating">9/10</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Urdu</span>
+                        <span class="language-rating">8/10</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Arabic</span>
+                        <span class="language-rating">7/10</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <!-- Profile Section -->
+                <div class="section">
+                    <h2>Profile</h2>
+                    <p class="profile-text">
+                        Dedicated young professional, currently studying towards Computer Science, with excellent grades and demonstrated high levels of motivation, work ethic and teamwork to achieve my goal. Excellent interpersonal, communication abilities and possess a range of technical skills. Enjoys being part of a team, as well as managing, motivating and training a productive team, and thrives in high pressure and challenging working environments.
+                    </p>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="section">
+                    <h2>Experience</h2>
+                    
+                    <div class="experience-item">
+                        <div class="job-title">Project Associate</div>
+                        <div class="company">Social Impact Lab, BRAC University</div>
+                        <div class="duration">2024 - Present</div>
+                        <div class="job-description">
+                            My role here is to take initiative to plan projects addressing critical social and environmental challenges in Bangladesh. Working here boosts my leadership and communication abilities.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Programming Competition Participations</div>
+                        <div class="company">SRBD Coding Contest 2023, CS Spectrum: Code Crash 2023</div>
+                        <div class="duration">2023</div>
+                        <div class="job-description">
+                            Participations in these competitions highly improved my problem-solving abilities, teamworking skills and time management.
+                        </div>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="job-title">Salesman</div>
+                        <div class="company">Sikandar Aziz L.L.C, Abu Dhabi, UAE</div>
+                        <div class="duration">June 2020 - July 2020</div>
+                        <div class="job-description">
+                            My role was to advertise company's products to our clients and explain the features and benefits of the product. I equipped effective communication skills, time management and customer service skills.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div class="section">
+                    <h2>Education</h2>
+                    
+                    <div class="education-item">
+                        <div class="degree">Bachelor of Computer Science and Engineering</div>
+                        <div class="institution">BRAC University, Bangladesh</div>
+                        <div class="education-duration">2022 - Present</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree">Edexcel A levels</div>
+                        <div class="institution">Al Nahda National School, UAE</div>
+                        <div class="education-duration">2019 - 2021</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree">Edexcel IGCSE</div>
+                        <div class="institution">Islamia English School, UAE</div>
+                        <div class="education-duration">2012 - 2019</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Download Section -->
+        <div class="pdf-download">
+            <h3 style="color: white; margin-bottom: 15px;">Download PDF Resume</h3>
+            <a href="Syed-Tahseen-Ahmed-CV.pdf" download="Syed-Tahseen-Ahmed-Resume.pdf">
+                📄 Download PDF Resume
+            </a>
+        </div>
+    </div>
+</body>
+</html>
